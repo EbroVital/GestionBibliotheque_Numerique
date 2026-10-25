@@ -83,6 +83,14 @@ php artisan serve
 ```
 Accéder à l’application 👉 http://localhost:8000
 
+## Comptes pour le test
+- Utilisateur
+  **Email :** user@test.com
+  **password :** password
+- Administrateur
+  **Email :** admin@test.com
+  **password :** password
+
 ## Capture d'ecran
 - Ecran d'accueil
 <img width="1366" height="768" alt="accueil" src="https://github.com/user-attachments/assets/531c1634-8584-4f64-8d0e-78ed454a27bb" />
