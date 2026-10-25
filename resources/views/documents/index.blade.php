@@ -5,7 +5,7 @@
     <div class="container">
 
         @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+            <div class="alert alert-success text-center">{{ session('success') }}</div>
         @endif
 
         <div class="row g-3 mb-4 align-items-center justify-content-between">

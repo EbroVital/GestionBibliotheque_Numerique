@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use App\Models\Document;
+use App\Models\Notation;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,7 +13,6 @@ class HomeController extends Controller
     {
         $query = $request->input('query');
         $categories = Categorie::withCount('documents')->get();
-
 
         if($query){
 
@@ -28,9 +28,11 @@ class HomeController extends Controller
             // $rechercheActive = true;
         }
 
+        // $note = round(Notation::with('document')->avg('note') * 2) / 2;
         return view('home', compact('categories', 'documents', 'query'));
 
     }
 
 
 }
+

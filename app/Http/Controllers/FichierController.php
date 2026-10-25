@@ -66,22 +66,33 @@ class FichierController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Document $document)
+    public function update(Request $request, Document $document, $id)
     {
 
         // $document = Document::findorfail();
-        $document->titre = $request->titre;
-        $document->description = $request->description;
+        // $document->titre = $request->titre;
+        // $document->description = $request->description;
 
-        if ($request->hasFile('fichier')) {
-            // Supprimer ancien fichier si il existe
-            if ($document->chemin && file_exists(public_path($document->chemin))) {
-                unlink(public_path($document->chemin));
-            }
+        // if ($request->hasFile('fichier')) {
+        //     // Supprimer ancien fichier si il existe
+        //     if ($document->chemin && file_exists(public_path($document->chemin))) {
+        //         unlink(public_path($document->chemin));
+        //     }
 
-            $path = $request->file('fichier')->store('documents', 'public');
-            $document->chemin = $path;
+        //     $path = $request->file('fichier')->store('documents', 'public');
+        //     $document->chemin = $path;
+        // }
+
+         $document = Document::findOrFail($id);
+
+        if ($request->hasFile('url_fichier')) {
+            $file = $request->file('url_fichier');
+            $path = $file->store('documents', 'public'); // ou autre logique
+            $document->url_fichier = $path;
         }
+
+        $document->titre = $request->input('titre');
+        $document->description = $request->input('description');
 
         $document->save();
 

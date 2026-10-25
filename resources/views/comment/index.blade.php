@@ -18,52 +18,52 @@
 
 
         @if($comment->count())
-        <table class="table table-bordered app-card">
-            <thead>
-                <tr>
-                    <th class="text-center">Titre du document</th>
-                    <th class="text-center">Document ajouté par </th>
-                    <th class="text-center">Catégorie</th>
-                    <th class="text-center">Contenu</th>
-                    <th class="text-center">Date d'ajout</th>
-                    <th class="text-center">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                @foreach($comment as $com)
-
+            <table class="table table-bordered app-card">
+                <thead>
                     <tr>
-                        <td class="text-center"> {{ $com->document->titre }} </td>
-                        <td class="text-center">
-
-                            @if( $com->document->user->role == 'admin')
-                                L'administrateur
-                            @else
-                                {{ $com->document->user->name }}
-                            @endif
-
-                        </td>
-                        <td class="text-center"> {{ $com->document->categorie->libelle }} </td>
-
-                         <td class="text-center"> {{ $com->contenu }} </td>
-
-                        <td class="text-center"> {{ $com->created_at->format('d/m/Y à H:i') }} </td>
-
-                        <td class="text-center">
-                            <form action="{{ route('commentaire.destroy', $com) }}" method="POST" class="d-inline" onsubmit="return confirm('Voulez-vous supprimer ce commentaire ?')">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger btn-sm">Supprimer</button>
-                            </form>
-                        </td>
-
+                        <th class="text-center">Titre du document</th>
+                        <th class="text-center">Document ajouté par </th>
+                        <th class="text-center">Catégorie</th>
+                        <th class="text-center">Contenu</th>
+                        <th class="text-center">Date d'ajout</th>
+                        <th class="text-center">Actions</th>
                     </tr>
+                </thead>
+                <tbody>
 
-                @endforeach
+                    @foreach($comment as $com)
 
-            </tbody>
-        </table>
+                        <tr>
+                            <td class="text-center"> {{ $com->document->titre }} </td>
+                            <td class="text-center">
+
+                                @if( $com->document->user->role == 'admin')
+                                    L'administrateur
+                                @else
+                                    {{ $com->document->user->name }}
+                                @endif
+
+                            </td>
+                            <td class="text-center"> {{ $com->document->categorie->libelle }} </td>
+
+                            <td class="text-center"> {{ $com->contenu }} </td>
+
+                            <td class="text-center"> {{ $com->created_at->format('d/m/Y à H:i') }} </td>
+
+                            <td class="text-center">
+                                <form action="{{ route('commentaire.destroy', $com) }}" method="POST" class="d-inline" onsubmit="return confirm('Voulez-vous supprimer ce commentaire ?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm">Supprimer</button>
+                                </form>
+                            </td>
+
+                        </tr>
+
+                    @endforeach
+
+                </tbody>
+            </table>
 
         {{ $comment->links() }}
 

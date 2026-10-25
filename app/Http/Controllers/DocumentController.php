@@ -69,23 +69,34 @@ class DocumentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(DocumentRequest $request, Document $document)
+    public function update(DocumentRequest $request, Document $document, $id)
     {
-        $document->titre = $request->titre;
-        $document->description = $request->description;
 
-        if ($request->hasFile('fichier')) {
-            // Supprimer ancien fichier si il existe
-            if ($document->chemin && file_exists(public_path($document->chemin))) {
-                unlink(public_path($document->chemin));
-            }
+        // if ($request->hasFile('fichier')) {
+        //     // Supprimer ancien fichier si il existe
+        //     if ($document->chemin && file_exists(public_path($document->chemin))) {
+        //         unlink(public_path($document->chemin));
+        //     }
 
-            $path = $request->file('fichier')->store('documents', 'public');
-            $document->chemin = $path;
+        //     $path = $request->file('fichier')->store('documents', 'public');
+        //     $document->chemin = $path;
+        // }
+        // $document->titre = $request->titre;
+        // $document->description = $request->description;
+        // $document->save();
+
+        $document = Document::findOrFail($id);
+
+        if ($request->hasFile('url_fichier')) {
+            $file = $request->file('url_fichier');
+            $path = $file->store('documents', 'public'); // ou autre logique
+            $document->url_fichier = $path;
         }
 
+        $document->titre = $request->input('titre');
+        $document->description = $request->input('description');
         $document->save();
-
+        
         return redirect()->route('fichiers.index')->with('success', 'Document modifié avec succès.');
     }
 

@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliothèque en Ligne</title>
     {{-- <link rel="website icon" type="png" href="{{asset("img/gecos.png")}}"> --}}
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> --}}
+
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -148,7 +152,7 @@
                                 <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0"/>
                             </svg>
                         </div>
-                        <h3>2. telecharger</h3>
+                        <h3>2. Télécharger</h3>
                         <p class="text-muted">Cliquez sur "télécharger" pour l'avoir à porté de main.</p>
                     </div>
                 </div>
@@ -165,7 +169,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="py-5">
 
@@ -213,7 +216,7 @@
                                                 Le : {{ $document->created_at->format('d/m/Y à H:i') }}
                                             @endif
                                             <br>
-                                            Moyenne des notes : <strong>{{ number_format($document->notations->avg('note'), 1) }} ★</strong>
+                                            Moyenne des notes : <strong>{{ number_format($document->notations->avg('note'), 1) }} <i class="fa fa-star text-warning"></i></strong>
 
                                         </p>
                                         {{-- <a href="{{ route('fichiers.show', $document->id) }}" class="btn btn-primary">Voir</a> --}}

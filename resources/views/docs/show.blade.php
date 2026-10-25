@@ -116,7 +116,7 @@
                             @else
                                 {{ $notation->user->name  }}
                             @endif
-                        </strong>  a ajouté {{ $notation->note }} ★
+                        </strong>  a ajouté {{ $notation->note }} <i class="fa fa-star text-warning"></i>
                         <br>
                         <small>Noté le {{ $notation->created_at->format('d/m/Y à H:i') }}</small>
                     </li>
@@ -124,7 +124,7 @@
             </ul>
 
             <p class="mt-2">
-                Moyenne des notes : <strong>{{ number_format($document->notations->avg('note'), 1) }} ★</strong>
+                Moyenne des notes : <strong>{{ number_format($document->notations->avg('note'), 1) }} <i class="fa fa-star text-warning"></i> </strong>
                 ({{ $document->notations->count() }} note(s))
             </p>
 

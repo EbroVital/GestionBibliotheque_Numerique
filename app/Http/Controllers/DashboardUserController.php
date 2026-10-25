@@ -7,6 +7,7 @@ use App\Models\Document;
 use App\Models\Download;
 use App\Models\Favori;
 use App\Models\Notation;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardUserController extends Controller
@@ -31,7 +32,7 @@ class DashboardUserController extends Controller
 
         $mostFavoritedDocument = $user->documents()->withCount('favoris')->first();
 
-        // dd($mostFavoritedDocument);
+        // dd($mostDownloadedDocumentByCreator);
 
         return view('dashboard.index', compact('docs', 'vues', 'download', 'favori', 'comment', 'note', 'docDownload', 'date', 'mostViewedDocument', 'mostDownloadedDocumentByCreator', 'mostCommentedDocument', 'highestRatedDocument', 'mostFavoritedDocument'));
     }

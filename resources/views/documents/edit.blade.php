@@ -54,6 +54,7 @@
                                     <div class="mb-3">
                                         <label for="chemin" class="form-label">URL du document (PDF de préférence)</label>
                                         <input type="file" name="chemin" id="chemin" class="form-control" value="{{ old('url_chemin', $document->url_chemin) }}" >
+                                        <small class="text-muted">Laisse vide si tu ne veux pas changer le fichier actuel</small>
                                     </div>
 
                                     <button type="submit" class="btn btn-success">Modifier</button>

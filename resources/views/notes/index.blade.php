@@ -46,7 +46,7 @@
                         </td>
                         <td class="text-center"> {{ $note->document->categorie->libelle }} </td>
 
-                         <td class="text-center"> {{ $note->note }}★ </td>
+                         <td class="text-center"> {{ $note->note }}<i class="fa fa-star text-warning"></i> </td>
 
                         <td class="text-center"> {{ $note->created_at->format('d/m/Y à H:i') }} </td>
 
