@@ -85,6 +85,10 @@ Accéder à l’application 👉 http://localhost:8000
 
 ## Capture d'ecran
 - Ecran d'accueil
+<img width="1366" height="768" alt="accueil" src="https://github.com/user-attachments/assets/531c1634-8584-4f64-8d0e-78ed454a27bb" />
+<img width="1366" height="768" alt="accueil(1)" src="https://github.com/user-attachments/assets/3c9ee1ef-b1a3-4c0b-b0a8-44df97647917" />
+<img width="1366" height="768" alt="accueil(2)" src="https://github.com/user-attachments/assets/ab705de6-8ef1-4b3d-b7f6-c59b79e097a5" />
+
 
 
 
