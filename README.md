@@ -1,4 +1,4 @@
-# 📚 Bibliothèque en ligne – Projet de Fin de Cycle
+#  Bibliothèque en ligne – Projet de Fin de Cycle
 ![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
@@ -8,7 +8,7 @@
 
 ---
 
-## 📖 Description
+##  Description
 Ce projet est une **application web de gestion d’une bibliothèque en ligne**, développée avec **Laravel**, dans le cadre d’un mémoire de fin de cycle en **Licence 3 Génie Logiciel**.  
 
 Elle permet aux utilisateurs de **consulter, emprunter, télécharger et commenter** des ouvrages numériques.  
@@ -16,8 +16,8 @@ L’administrateur dispose d’un **espace de gestion** pour organiser les livre
 
 ---
 
-## 🚀 Fonctionnalités principales
-### 👤 Côté utilisateur
+##  Fonctionnalités principales
+###  Côté utilisateur
 - Inscription et connexion sécurisée
 - Recherche et consultation de livres
 - Téléchargement de fichiers PDF
@@ -25,7 +25,7 @@ L’administrateur dispose d’un **espace de gestion** pour organiser les livre
 - Notation et commentaires
 - Historique des emprunts et téléchargements
 
-### 🔑 Côté administrateur
+###  Côté administrateur
 - Gestion des utilisateurs et des rôles
 - Ajout, modification et suppression d’ouvrages
 - Gestion des catégories de livres
@@ -34,7 +34,7 @@ L’administrateur dispose d’un **espace de gestion** pour organiser les livre
 
 ---
 
-## 🛠️ Technologies utilisées
+##  Technologies utilisées
 - [Laravel 10](https://laravel.com/) (Framework PHP)
 - [PHP 8.2](https://www.php.net/)
 - [MySQL](https://www.mysql.com/) (Base de données)
@@ -43,7 +43,7 @@ L’administrateur dispose d’un **espace de gestion** pour organiser les livre
 
 ---
 
-## 📂 Installation et configuration
+##  Installation et configuration
 
 ### 1️⃣ Cloner le projet
 ```
@@ -82,5 +82,11 @@ php artisan migrate --seed
 php artisan serve
 ```
 Accéder à l’application 👉 http://localhost:8000
+
+## Capture d'ecran
+- Ecran d'accueil
+
+
+
 
 
